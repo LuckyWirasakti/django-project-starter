@@ -1,0 +1,49 @@
+version: "3.7"
+services: 
+  core:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: core
+    container_name: core
+    restart: unless-stopped
+    depends_on: 
+      - database
+      - webserver
+    volumes: 
+      - ./:/core/
+      - drive:/core/static
+    networks: 
+      - local
+
+  database:
+    image: postgres:alpine
+    container_name: database
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: core
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - ./docker-compose/postgresql:/docker-entrypoint-initdb.d
+    networks:
+      - local
+
+  webserver:
+    image: nginx:stable-alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    volumes:
+      - drive:/core/static
+      - ./docker-compose/nginx/:/etc/nginx/conf.d/
+    networks:
+      - local
+
+volumes: 
+  drive:
+
+networks: 
+  local:
+    driver: bridge
