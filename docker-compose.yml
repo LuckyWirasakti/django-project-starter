@@ -7,6 +7,8 @@ services:
     image: core
     container_name: core
     restart: unless-stopped
+    env_file:
+      - ./core/.env
     depends_on: 
       - database
       - webserver
