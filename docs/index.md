@@ -1,24 +1,9 @@
----
-layout: default
----
+# DJANGO STARTER TEMPLATE
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+[![Build Status](https://travis-ci.com/LuckyWirasakti/django-project-starter.svg?branch=master)](https://travis-ci.com/github/LuckyWirasakti/django-project-starter) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/LuckyWirasakti/django-project-starter/blob/master/LICENSE) [![GitHub release](https://img.shields.io/badge/release-v1.1.1-blue)](https://github.com/LuckyWirasakti/django-project-starter/releases/tag/1.1.1)  [![Maintaner](https://img.shields.io/badge/maintainer-LuckyWirasakti-blue)](mailto:luckywirasakti@gmail.com) 
 
-[Link to another page](./pages/another.md).
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
 
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
 
 ### Header 3
 
