@@ -22,15 +22,6 @@ before_script:
 script:
   - python manage.py test
 
-deploy:
-  provider: heroku:git
-  username: lucky.wirasakti@gmail.com
-  password: Adhikrisna123
-  app: event-charge
-  on:
-    repo: LuckyWirasakti/django-project-starter
-    branch: master
-
 
 
 
