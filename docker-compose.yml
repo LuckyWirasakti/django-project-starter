@@ -3,7 +3,7 @@ services:
   core:
     build: 
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker-compose/python/Dockerfile
     image: core
     container_name: core
     restart: unless-stopped

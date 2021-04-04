@@ -17,4 +17,4 @@ RUN chown -R user:user /core/
 EXPOSE 8000
 USER user
 
-ENTRYPOINT ["sh","entrypoint.sh"]
+ENTRYPOINT ["sh","docker-compose/bash/entrypoint.sh"]

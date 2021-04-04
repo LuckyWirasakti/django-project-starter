@@ -21,6 +21,9 @@ script:
 - python manage.py migrate
 - python manage.py test
 
+before_deploy:
+- cp ./core/.env.heroku ./core/.env
+
 deploy:
   provider: heroku
   skip_cleanup: true
@@ -31,6 +34,5 @@ deploy:
     repo: LuckyWirasakti/django-project-starter
     branch: master
   run:
-      - "cp ./core/.env.heroku ./core/.env"
-      - "python manage.py migrate"
-      - "python manage.py collectstatic --no-input"
+      - python manage.py migrate
+      - python manage.py collectstatic --no-input
