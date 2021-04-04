@@ -1,108 +1,36 @@
-# DJANGO STARTER TEMPLATE
+![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
 [![Build Status](https://travis-ci.com/LuckyWirasakti/django-project-starter.svg?branch=master)](https://travis-ci.com/github/LuckyWirasakti/django-project-starter) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/LuckyWirasakti/django-project-starter/blob/master/LICENSE) [![GitHub release](https://img.shields.io/badge/release-v1.1.1-blue)](https://github.com/LuckyWirasakti/django-project-starter/releases/tag/1.1.1)  [![Maintaner](https://img.shields.io/badge/maintainer-LuckyWirasakti-blue)](mailto:luckywirasakti@gmail.com) 
 
 
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
-### Header 3
+### Installation Guide
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+- Before installing this project, make sure your computer already installed application in the `requirements` First.
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+- Clone this project to your local Computer
 
-#### Header 4
+- Duplicate `.env.example` file and rename to `.env`
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+- Run `docker-compose up` and add flag `--build` for build image, you can ignore flag if has already build image.
 
-##### Header 5
+- Create superuser 
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+	```python
+	./manage.py createsuperuser
+	```
 
-###### Header 6
+### List Package In This Project
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+*   Django==3.1.7
+*   django-environ==0.4.5
+*   psycopg2-binary==2.8.6
+*   djangorestframework==3.12.4
+*   django-cors-headers==3.7.0
+*   django-oauth-toolkit==1.5.0
+*   django-rest-framework-social-oauth2==1.1.0
+*   drf-yasg==1.20.0
+*   whitenoise==5.2.0
+*   gunicorn==20.1.0
+*   rollbar==0.15.2
