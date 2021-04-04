@@ -3,9 +3,8 @@ language: python
 cache: pip
 python:
 - '3.9'
-addons:
-- postgresql: '9.6'
 services:
+- postgresql
 - redis-server
 before_install:
 - export SECRET_KEY=RahasiaSemesteaPlanetBumi
