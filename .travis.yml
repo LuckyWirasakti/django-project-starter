@@ -13,12 +13,8 @@ install:
 before_script:
 - psql -c "CREATE DATABASE travis_ci_test;" -U postgres
 script:
+- python manage.py migrate
 - python manage.py test
-
-before_deploy:
-- export SECRET_KEY=RahasiaSemesteaPlanetBumi
-- export DEBUG=on
-- export DISABLE_COLLECTSTATIC=1
 
 deploy:
   provider: heroku
@@ -30,5 +26,6 @@ deploy:
     repo: LuckyWirasakti/django-project-starter
     branch: master
   run:
+      - "cp core/.env.heroku core/.env"
       - "python manage.py migrate"
       - "python manage.py collectstatic --noinput"
