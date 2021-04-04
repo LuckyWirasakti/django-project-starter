@@ -1,28 +1,25 @@
 sudo: false
-
 language: python
-
 cache: pip
-
-python: 
-  - "3.9"
-
+python:
+- '3.9'
 addons:
-  - postgresql: "9.6"
-
+- postgresql: '9.6'
 before_install:
-  - export SECRET_KEY=RahasiaSemesteaPlanetBumi
-  - export DATABASE_URL=postgres://postgres:postgres@localhost:5432/travis_ci_test
+- export SECRET_KEY=RahasiaSemesteaPlanetBumi
+- export DATABASE_URL=postgres://postgres:postgres@localhost:5432/travis_ci_test
 install:
-  - pip install -r requirements.txt
-
+- pip install -r requirements.txt
 before_script:
-  - psql -c "CREATE DATABASE travis_ci_test;" -U postgres
-
+- psql -c "CREATE DATABASE travis_ci_test;" -U postgres
 script:
-  - python manage.py migrate
-  - python manage.py test
-
-
-
-
+- python manage.py migrate
+- python manage.py test
+deploy:
+  provider: heroku
+  api_key:
+    secure: U4a/3Wxk14gZZ06UbVVV5e0iS65fBe8jCK3vqd/fzWDrzCI0AW2/P71j1R+Y3xiyUd4QJR0+TspM9IxyAVh1S+wJWz3w8jzEQHeXjH1ICdSi6rQJ3IRzLAYbDTgEzN6bL3epJ1YbX/K5wbd8WgU+TZXlyCJcLuowF6HkUEEv/PAvJz7c1Xe5XIKC65z3hSUO3FZbw9mrSuCM+BeIId+KvExvUYYDiICqE2Np93MYXU/wHpImC+0xSSDRtkaDGbvhqUFdOnJ1xoewoEB3sjebRdt+AWZ96uSftKe4RQgQPU4CyMrrF1Mk1LNzZmfe+zA8oPNHBM+X0UZr22fXTFJlyaKt/McC45yrDLKaEoDH+wvMUaRgdLh2ZaOreaWfjOGOP11gfbFSvaaZfdNL7gq0q4gXjg1cX6uppdyQHQBm5iJZZeDNL+0mcgIHpQDAR8dk/Z5steOdmUR2joHSksppIyX0WLsoLka5jof9fE/Xops7ROSEWQF9V6J2pprie0NZP5CNqt5rvwS6muAJhAHkIXDT5kkbnxdK09ZBpw9t5ybzg8s65L0iDpQsGjE8HApH5Tha8SbNFo23p4nze17++cgGkN8Zh14zSv9DQl+edZE26z6BHpzRY3frITPZCYU5cPOb8QyemUNTGngvopsJ8ezNQt0u90W8jbOT3DT8XOc=
+  app: django-project-starter
+  on:
+    repo: LuckyWirasakti/django-project-starter
+    branch: master
