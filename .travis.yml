@@ -14,6 +14,12 @@ before_script:
 - psql -c "CREATE DATABASE travis_ci_test;" -U postgres
 script:
 - python manage.py test
+
+before_deploy:
+- export SECRET_KEY=RahasiaSemesteaPlanetBumi
+- export DEBUG=on
+- export DISABLE_COLLECTSTATIC=1
+
 deploy:
   provider: heroku
   skip_cleanup: true
