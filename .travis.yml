@@ -1,0 +1,36 @@
+sudo: false
+
+language: python
+
+cache: pip
+
+python: 
+  - "3.9"
+
+addons:
+  - postgresql: "9.6"
+
+before_install:
+  - export SECRET_KEY=RahasiaSemesteaPlanetBumi
+  - export DATABASE_URL=postgres://postgres:postgres@localhost:5432/travis_ci_test
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - psql -c "CREATE DATABASE travis_ci_test;" -U postgres
+
+script:
+  - python manage.py test
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: SECURE_KEY
+  app: event-charge
+  on:
+    repo: marfyl/travis-heroku
+    branch: master
+
+
+
+
