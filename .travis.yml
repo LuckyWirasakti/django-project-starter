@@ -25,7 +25,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: SECURE_KEY
+    secure: 05816288-6ea5-4ab4-9295-b1e2188291e5
   app: event-charge
   on:
     repo: LuckyWirasakti/django-project-starter
