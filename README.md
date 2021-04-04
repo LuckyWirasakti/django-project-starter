@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/LuckyWirasakti/django-project-starter.svg?branch=master)](https://travis-ci.org/github/LuckyWirasakti/django-project-starter)
+[![Build Status](https://travis-ci.com/LuckyWirasakti/django-project-starter.svg?branch=master)](https://travis-ci.com/github/LuckyWirasakti/django-project-starter)
 
 ## Installation Guide
 
