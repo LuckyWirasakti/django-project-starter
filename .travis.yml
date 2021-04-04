@@ -5,6 +5,8 @@ python:
 - '3.9'
 addons:
 - postgresql: '9.6'
+services:
+- redis-server
 before_install:
 - export SECRET_KEY=RahasiaSemesteaPlanetBumi
 - export DATABASE_URL=postgres://postgres:postgres@localhost:5432/travis_ci_test
@@ -13,7 +15,6 @@ before_install:
 - export SOCIAL_AUTH_FACEBOOK_SECRET=2a39df7b1339bafa17e53a650b3a3eea
 - export SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=284374695498-b7dqjjm4qvhc4ueft6t6vv1f5hj5e3g9.apps.googleusercontent.com
 - export SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET=gelk_nHeOq6_3FToJvvtSpWS
-
 install:
 - pip install -r requirements.txt
 before_script:
@@ -21,10 +22,9 @@ before_script:
 script:
 - python manage.py migrate
 - python manage.py test
-
+- python manage.py collectstatic --no-input
 before_deploy:
 - cp core/.env.example core/.env
-
 deploy:
   provider: heroku
   skip_cleanup: true
@@ -35,5 +35,5 @@ deploy:
     repo: LuckyWirasakti/django-project-starter
     branch: master
   run:
-      - python manage.py migrate
-      - python manage.py collectstatic --no-input
+    - python manage.py migrate
+    - python manage.py collectstatic --no-input
