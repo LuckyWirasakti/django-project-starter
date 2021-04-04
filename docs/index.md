@@ -1,6 +1,6 @@
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
-[![Build Status](https://travis-ci.com/LuckyWirasakti/django-project-starter.svg?branch=master)](https://travis-ci.com/github/LuckyWirasakti/django-project-starter) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/LuckyWirasakti/django-project-starter/blob/master/LICENSE) [![GitHub release](https://img.shields.io/badge/release-v1.1.1-blue)](https://github.com/LuckyWirasakti/django-project-starter/releases/tag/1.1.1)  [![Maintaner](https://img.shields.io/badge/maintainer-LuckyWirasakti-blue)](mailto:luckywirasakti@gmail.com) 
+[![Build Status](https://travis-ci.com/LuckyWirasakti/django-project-starter.svg?branch=master)](https://travis-ci.com/github/LuckyWirasakti/django-project-starter) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/LuckyWirasakti/django-project-starter/blob/master/docs/pages/LICENSE) [![GitHub release](https://img.shields.io/badge/release-v1.1.1-blue)](https://github.com/LuckyWirasakti/django-project-starter/releases/tag/1.1.1)  [![Maintaner](https://img.shields.io/badge/maintainer-LuckyWirasakti-blue)](mailto:luckywirasakti@gmail.com) 
 
 
 This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
