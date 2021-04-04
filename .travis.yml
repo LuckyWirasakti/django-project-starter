@@ -23,9 +23,9 @@ script:
   - python manage.py test
 
 deploy:
-  provider: heroku
-  api_key:
-    secure: travis encrypt (b810e9fe-2042-4021-8f98-8a66955570b2) --add deploy.api_key
+  provider: heroku:git
+  username: lucky.wirasakti@gmail.com
+  password: Adhikrisna123
   app: event-charge
   on:
     repo: LuckyWirasakti/django-project-starter
