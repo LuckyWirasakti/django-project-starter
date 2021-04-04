@@ -2,12 +2,13 @@ sudo: false
 language: python
 cache: pip
 python:
-- '3.9'
+- '3.9.2'
 addons:
 - postgresql: '9.6'
 before_install:
 - export SECRET_KEY=RahasiaSemesteaPlanetBumi
 - export DATABASE_URL=postgres://postgres:postgres@localhost:5432/travis_ci_test
+- export ROLLBAR_ACCESS_TOKEN=81d47bdd7d054f8b86528aa09a7b4495
 - export SOCIAL_AUTH_FACEBOOK_KEY=915724865638661
 - export SOCIAL_AUTH_FACEBOOK_SECRET=2a39df7b1339bafa17e53a650b3a3eea
 - export SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=284374695498-b7dqjjm4qvhc4ueft6t6vv1f5hj5e3g9.apps.googleusercontent.com
@@ -22,7 +23,7 @@ script:
 - python manage.py test
 
 before_deploy:
-- cp ./core/.env.heroku ./core/.env
+- cp core/.env.example core/.env
 
 deploy:
   provider: heroku
