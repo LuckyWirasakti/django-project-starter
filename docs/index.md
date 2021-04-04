@@ -15,22 +15,4 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 - Run `docker-compose up` and add flag `--build` for build image, you can ignore flag if has already build image.
 
-- Create superuser 
-
-	```python
-	./manage.py createsuperuser
-	```
-
-### List Package In This Project
-
-*   Django==3.1.7
-*   django-environ==0.4.5
-*   psycopg2-binary==2.8.6
-*   djangorestframework==3.12.4
-*   django-cors-headers==3.7.0
-*   django-oauth-toolkit==1.5.0
-*   django-rest-framework-social-oauth2==1.1.0
-*   drf-yasg==1.20.0
-*   whitenoise==5.2.0
-*   gunicorn==20.1.0
-*   rollbar==0.15.2
+- Create superuser `python manage.py createsuperuser`.
