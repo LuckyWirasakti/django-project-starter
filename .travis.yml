@@ -28,7 +28,7 @@ deploy:
     secure: SECURE_KEY
   app: event-charge
   on:
-    repo: marfyl/travis-heroku
+    repo: LuckyWirasakti/django-project-starter
     branch: master
 
 
