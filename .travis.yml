@@ -2,7 +2,7 @@ sudo: false
 language: python
 cache: pip
 python:
-- '3.9.2'
+- '3.9'
 addons:
 - postgresql: '9.6'
 before_install:
