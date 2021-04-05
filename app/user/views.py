@@ -1,4 +1,4 @@
-from app.users.serializers import ChangePasswordSerializer, ProfileSerializer, RegisterSerializer
+from app.user.serializers import ChangePasswordSerializer, ProfileSerializer, RegisterSerializer
 from django.contrib.auth.models import User
 from rest_framework import generics
 from rest_framework import permissions

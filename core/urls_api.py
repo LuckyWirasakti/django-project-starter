@@ -1,5 +1,6 @@
+from app.gallery.views import GalleryListView, GalleryDetailView
 from django.urls import path
-from app.users.views import ChangePasswordView, ProfileView, RegisterView
+from app.user.views import ChangePasswordView, ProfileView, RegisterView
 
 users = [
     path('register', RegisterView.as_view(), name='register'),
@@ -7,4 +8,9 @@ users = [
     path('profile', ProfileView.as_view(), name='profile'),
 ]
 
-urlpatterns = users
+gallery = [
+    path('gallery', GalleryListView.as_view()),
+    path('gallery/<int:pk>', GalleryDetailView.as_view()),
+]
+
+urlpatterns = users + gallery
