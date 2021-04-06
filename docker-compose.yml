@@ -14,7 +14,8 @@ services:
       - webserver
     volumes: 
       - ./:/core/
-      - drive:/core/static
+      - static:/core/static
+      - media:/core/media
     networks: 
       - local
 
@@ -38,13 +39,15 @@ services:
     ports:
       - "80:80"
     volumes:
-      - drive:/core/static
+      - static:/core/static
+      - media:/core/media
       - ./docker-compose/nginx/:/etc/nginx/conf.d/
     networks:
       - local
 
 volumes: 
-  drive:
+  static:
+  media:
 
 networks: 
   local:

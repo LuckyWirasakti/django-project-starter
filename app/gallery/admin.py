@@ -13,7 +13,6 @@ class GalleryAdmin(admin.ModelAdmin):
         'id',
         'get_file',
         'caption',
-        'user',
         'created_at',
         'updated_at',
     )

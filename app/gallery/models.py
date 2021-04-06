@@ -19,8 +19,9 @@ class Gallery(models.Model):
         return self.caption
 
     def get_file(self):
-        if self.content_type == "image":
+        content_type = self.content_type.split('/')[0]
+        if content_type == "image":
             return mark_safe('<img src="/media/%s" width="250" />' % (self.file))
-        if self.content_type == "video":
-            return mark_safe('<video src="/media/%s" width="250" />' % (self.file))
+        if content_type == "video":
+            return mark_safe('<video width="250" controls><source src="/media/%s" type="%s">Your browser does not support the video tag.</video>' % (self.file, self.content_type))
     get_file.short_description = "file"
