@@ -48,8 +48,7 @@ DEFAULT_APPS = [
 ]
 
 LOCAL_APPS = [
-    'app.user',
-    'app.gallery',
+    'core.listener',
 ]
 
 THIRD_PARTY_APPS = [
@@ -103,7 +102,6 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
     'default': env.db(),
-    'extra': env.db('SQLITE_URL', default='sqlite:///db.sqlite3')
 }
 
 
@@ -262,3 +260,5 @@ ROLLBAR = {
 
 import rollbar
 rollbar.init(**ROLLBAR)
+
+VERIFY_SSL_REQUEST = False
